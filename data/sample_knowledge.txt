@@ -1,0 +1,13 @@
+# RAG Knowledge Assistant Demo
+
+Retrieval-Augmented Generation combines information retrieval with language generation.
+
+A typical RAG pipeline ingests documents, splits them into chunks, converts chunks into vector embeddings, stores those vectors in a vector index, retrieves the most relevant chunks for a user question, and supplies the retrieved context to a language model.
+
+Chunking controls how much text is represented by each retrieval unit. Smaller chunks can improve precision for focused questions, while larger chunks can preserve broader context. Chunk overlap helps prevent important information from being split across chunk boundaries.
+
+Embeddings represent text as dense numerical vectors. FAISS can efficiently search these vectors and return the highest-scoring candidates.
+
+Grounded generation means the language model should base its answer on retrieved evidence instead of relying on unsupported assumptions. Prompt instructions can explicitly require the model to acknowledge when supplied context is insufficient.
+
+Evaluation can vary chunk size, overlap, embedding model, Top-K retrieval depth, prompt wording, and answer quality. These parameters should be tested on representative questions from the target domain.
